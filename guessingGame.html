@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing Game</title>
+
+    <style>
+      body {
+        background: #313131;
+        color: #f1f1f1;
+      }
+      #wrapper {
+        text-align: center;
+        font-family: sans-serif;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      form #guess {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin: 30px 0;
+      }
+      form #guessInputBox {
+        font-size: 2.5rem;
+        padding: 10px 0;
+        width: 75%;
+        max-width: 280px;
+        font-weight: 600;
+        text-align: center;
+        margin: 10px 0;
+        border-radius: 7px;
+        border: none;
+        outline: none;
+      }
+      form #submit {
+        padding: 15px;
+        margin: 30px 0 10px;
+        font-weight: 600;
+        font-size: x-large;
+        border-radius: 12px;
+        background: #000;
+        color: white;
+      }
+
+      #resultField {
+        min-height: 120px;
+        font-weight: 500;
+        max-width: 300px;
+        margin: 10px auto;
+      }
+      #resultField #guesses {
+        background: #000;
+        color: white;
+        padding: 2px 5px;
+        font-weight: bold;
+      }
+      #resultField #remainingGuessAttempt {
+        font-weight: bold;
+      }
+      #resultField #lowOrHighMsg {
+        font-weight: bold;
+        font-size: 20px;
+        background: yellow;
+        color: brown;
+        /* padding: 5px; */
+        border-radius: 5px;
+      }
+
+      #newGameBtn {
+        border: 1px solid;
+        font-size: 26px;
+        padding: 5px;
+        border-radius: 10px;
+        background: #109f00;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Number guessing game</h1>
+      <p>Try and guess a number between 1 and 100.</p>
+      <p>You have 10 attempts to guess the right number.</p>
+
+      <form id="form">
+        <label for="guessInputBox" id="guess">Guess a number</label>
+        <input
+          type="text"
+          id="guessInputBox"
+          value=""
+          autocomplete="off"
+          autofocus
+        />
+        <input type="submit" id="submit" value="submit guess" />
+      </form>
+
+      <div id="resultField">
+        <p>Previous Guesses: <span id="guesses"></span></p>
+        <p>Remaining Guesses: <span id="remainingGuessAttempt">10</span></p>
+        <p id="lowOrHighMsg"></p>
+        <h2 id="newGamebtn" style="display: none">Click to Start new game</h2>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
